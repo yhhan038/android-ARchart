@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="230dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@color/white">
+
+        <ImageButton
+            android:id="@+id/line_plus"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:backgroundTint="#00000000"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_plus"
+            android:tint="#00000000" />
+
+
+        <TextView
+            android:id="@+id/line_title"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_weight="1"
+            android:layout_toStartOf="@id/line_minmax"
+            android:background="@android:color/white"
+            android:textColor="@android:color/black"
+            android:text="@string/line_title"
+            android:textAlignment="center" />
+
+
+        <ImageButton
+            android:id="@+id/line_minmax"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:backgroundTint="#00000000"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_minmax"
+            android:tint="#00000000" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/line_chart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#00FFFFFF">
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/chart1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="30dp"
+        android:background="@android:color/white"
+        android:layout_above="@+id/seekBar1" />
+
+    <SeekBar
+        android:id="@+id/seekBar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@+id/tvYMax"
+        android:background="@android:color/white"
+        android:max="150"
+        android:paddingBottom="2dp" />
+
+    <SeekBar
+        android:id="@+id/seekBar1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/seekBar2"
+        android:layout_toLeftOf="@+id/tvXMax"
+        android:background="@android:color/white"
+        android:max="500"
+        android:paddingBottom="5dp" />
+
+    <TextView
+        android:id="@+id/tvXMax"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/seekBar1"
+        android:layout_alignParentRight="true"
+        android:text="@string/dash"
+        android:background="@android:color/white"
+        android:gravity="right"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/tvYMax"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/seekBar2"
+        android:layout_alignParentRight="true"
+        android:text="@string/dash"
+        android:background="@android:color/white"
+        android:gravity="right"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    </RelativeLayout>
+</RelativeLayout>

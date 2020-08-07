@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:ignore="WebViewLayout">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/contentsTabs"
+        android:layout_width="match_parent"
+        android:layout_height="28dp">
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/news_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="News" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/yt_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="YouTube" />
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/contents">
+
+        <WebView
+            android:id="@+id/web2DView"
+            android:layout_width="300dp"
+            android:layout_height="170dp" />
+
+    </FrameLayout>
+
+</LinearLayout>

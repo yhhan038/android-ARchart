@@ -1,0 +1,336 @@
+
+CompletableFuture<ViewRenderable> incheonLayout =
+                ViewRenderable.builder().setView(this, R.layout.incheon).build();
+        CompletableFuture<ViewRenderable> gwangjuLayout =
+                ViewRenderable.builder().setView(this, R.layout.gwangju).build();
+        CompletableFuture<ViewRenderable> daejeonLayout =
+                ViewRenderable.builder().setView(this, R.layout.daejeon).build();
+
+        CompletableFuture<ViewRenderable> jejuLayout =
+                ViewRenderable.builder().setView(this, R.layout.jeju).build();
+        CompletableFuture<ViewRenderable> sejongLayout =
+                ViewRenderable.builder().setView(this, R.layout.sejong).build();
+
+
+
+
+incheonLayoutRenderable = incheonLayout.get();
+                        gwangjuLayoutRenderable = gwangjuLayout.get();
+                        daejeonLayoutRenderable = daejeonLayout.get();
+                        jejuLayoutRenderable = jejuLayout.get();
+                        sejongLayoutRenderable = sejongLayout.get();
+
+
+/*
+                    // incheon
+                    LocationMarker incheonLocationMarker = new LocationMarker(
+                            37.455894, 126.705497,
+                            getIncheonView()
+                    );
+                    incheonLocationMarker.setRenderEvent(new LocationNodeRender() {
+                        @Override
+                        public void render(LocationNode node) {
+                            incheonView = incheonLayoutRenderable.getView();
+                            incheonPM10 = incheonView.findViewById(R.id.incheonpm10);
+                            incheonDistance = incheonView.findViewById(R.id.incheondistance);
+                            incheonDistanceInt = node.getDistance() / 1000;
+
+                            if (node.getDistance() / 1000 >= 250) {
+                                incheonView.setScaleX(0.4f);
+                                incheonView.setScaleY(0.4f);
+                            } else if ((node.getDistance() / 1000) >= 150 && (node.getDistance() / 1000) < 250) {
+                                incheonView.setScaleX(0.6f);
+                                incheonView.setScaleY(0.6f);
+                            } else if (node.getDistance() / 1000 >= 50 && (node.getDistance() / 1000) < 150) {
+                                incheonView.setScaleX(0.8f);
+                                incheonView.setScaleY(0.8f);
+                            } else {
+                                incheonView.setScaleX(1f);
+                                incheonView.setScaleY(1f);
+                            }
+                        }
+                    });
+
+                    // gwangju
+                    LocationMarker gwangjuLocationMarker = new LocationMarker(
+                            35.159971, 126.851304,
+                            getGwangjuView()
+                    );
+                    gwangjuLocationMarker.setRenderEvent(new LocationNodeRender() {
+                        @Override
+                        public void render(LocationNode node) {
+                            gwangjuView = gwangjuLayoutRenderable.getView();
+                            gwangjuPM10 = gwangjuView.findViewById(R.id.gwangjupm10);
+                            gwangjuDistance = gwangjuView.findViewById(R.id.gwangjudistance);
+                            gwangjuDistanceInt = node.getDistance() / 1000;
+
+                            if (node.getDistance() / 1000 >= 250) {
+                                gwangjuView.setScaleX(0.4f);
+                                gwangjuView.setScaleY(0.4f);
+                            } else if ((node.getDistance() / 1000) >= 150 && (node.getDistance() / 1000) < 250) {
+                                gwangjuView.setScaleX(0.6f);
+                                gwangjuView.setScaleY(0.6f);
+                            } else if (node.getDistance() / 1000 >= 50 && (node.getDistance() / 1000) < 150) {
+                                gwangjuView.setScaleX(0.8f);
+                                gwangjuView.setScaleY(0.8f);
+                            } else {
+                                gwangjuView.setScaleX(1f);
+                                gwangjuView.setScaleY(1f);
+                            }
+                        }
+                    });
+
+                    // daejeon
+                    LocationMarker daejeonLocationMarker = new LocationMarker(
+                            36.350405, 127.384980,
+                            getDaejeonView()
+                    );
+                    daejeonLocationMarker.setRenderEvent(new LocationNodeRender() {
+                        @Override
+                        public void render(LocationNode node) {
+                            daejeonView = daejeonLayoutRenderable.getView();
+                            daejeonPM10 = daejeonView.findViewById(R.id.daejeonpm10);
+                            daejeonDistance = daejeonView.findViewById(R.id.daejeondistance);
+                            daejeonDistanceInt = node.getDistance() / 1000;
+
+                            if (node.getDistance() / 1000 >= 250) {
+                                daejeonView.setScaleX(0.4f);
+                                daejeonView.setScaleY(0.4f);
+                            } else if ((node.getDistance() / 1000) >= 150 && (node.getDistance() / 1000) < 250) {
+                                daejeonView.setScaleX(0.6f);
+                                daejeonView.setScaleY(0.6f);
+                            } else if (node.getDistance() / 1000 >= 50 && (node.getDistance() / 1000) < 150) {
+                                daejeonView.setScaleX(0.8f);
+                                daejeonView.setScaleY(0.8f);
+                            } else {
+                                daejeonView.setScaleX(1f);
+                                daejeonView.setScaleY(1f);
+                            }
+                        }
+                    });
+                    */
+
+/*
+                    // jeju
+                    LocationMarker jejuLocationMarker = new LocationMarker(
+                            33.488964, 126.498209,
+                            getJejuView()
+                    );
+                    jejuLocationMarker.setRenderEvent(new LocationNodeRender() {
+                        @Override
+                        public void render(LocationNode node) {
+                            jejuView = jejuLayoutRenderable.getView();
+                            jejuPM10 = jejuView.findViewById(R.id.jejupm10);
+                            jejuDistance = jejuView.findViewById(R.id.jejudistance);
+                            jejuDistanceInt = node.getDistance() / 1000;
+
+                            if (node.getDistance() / 1000 >= 250) {
+                                jejuView.setScaleX(0.4f);
+                                jejuView.setScaleY(0.4f);
+                            } else if ((node.getDistance() / 1000) >= 150 && (node.getDistance() / 1000) < 250) {
+                                jejuView.setScaleX(0.6f);
+                                jejuView.setScaleY(0.6f);
+                            } else if (node.getDistance() / 1000 >= 50 && (node.getDistance() / 1000) < 150) {
+                                jejuView.setScaleX(0.8f);
+                                jejuView.setScaleY(0.8f);
+                            } else {
+                                jejuView.setScaleX(1f);
+                                jejuView.setScaleY(1f);
+                            }
+                        }
+                    });
+
+                    // sejong
+                    LocationMarker sejongLocationMarker = new LocationMarker(
+                            36.479978, 127.288746,
+                            getSejongView()
+                    );
+                    sejongLocationMarker.setRenderEvent(new LocationNodeRender() {
+                        @Override
+                        public void render(LocationNode node) {
+                            sejongView = sejongLayoutRenderable.getView();
+                            sejongPM10 = sejongView.findViewById(R.id.sejongpm10);
+                            sejongDistance = sejongView.findViewById(R.id.sejongdistance);
+                            sejongDistanceInt = node.getDistance() / 1000;
+
+                            if (node.getDistance() / 1000 >= 250) {
+                                sejongView.setScaleX(0.4f);
+                                sejongView.setScaleY(0.4f);
+                            } else if ((node.getDistance() / 1000) >= 150 && (node.getDistance() / 1000) < 250) {
+                                sejongView.setScaleX(0.6f);
+                                sejongView.setScaleY(0.6f);
+                            } else if (node.getDistance() / 1000 >= 50 && (node.getDistance() / 1000) < 150) {
+                                sejongView.setScaleX(0.8f);
+                                sejongView.setScaleY(0.8f);
+                            } else {
+                                sejongView.setScaleX(1f);
+                                sejongView.setScaleY(1f);
+                            }
+                        }
+                    });
+                    */
+
+                        //locationScene.mLocationMarkers.add(incheonLocationMarker);
+                        //locationScene.mLocationMarkers.add(gwangjuLocationMarker);
+                        //locationScene.mLocationMarkers.add(daejeonLocationMarker);
+                        //locationScene.mLocationMarkers.add(jejuLocationMarker);
+                        //locationScene.mLocationMarkers.add(sejongLocationMarker);
+
+
+
+
+    private Node getIncheonView() {
+        Node base = new Node();
+        base.setRenderable(incheonLayoutRenderable);
+        Context c = this;
+        // Add  listeners etc here
+        View eView = incheonLayoutRenderable.getView();
+        eView.setOnTouchListener((v, event) -> {
+            Toast.makeText(
+                    c, "Incheon touched.", Toast.LENGTH_LONG)
+                    .show();
+            return false;
+        });
+
+        return base;
+    }
+
+    private Node getGwangjuView() {
+        Node base = new Node();
+        base.setRenderable(gwangjuLayoutRenderable);
+        Context c = this;
+        // Add  listeners etc here
+        View eView = gwangjuLayoutRenderable.getView();
+        eView.setOnTouchListener((v, event) -> {
+            Toast.makeText(
+                    c, "Gwangju touched.", Toast.LENGTH_LONG)
+                    .show();
+            return false;
+        });
+
+        return base;
+    }
+
+    private Node getDaejeonView() {
+        Node base = new Node();
+        base.setRenderable(daejeonLayoutRenderable);
+        Context c = this;
+        // Add  listeners etc here
+        View eView = daejeonLayoutRenderable.getView();
+        eView.setOnTouchListener((v, event) -> {
+            Toast.makeText(
+                    c, "Daejeon touched.", Toast.LENGTH_LONG)
+                    .show();
+            return false;
+        });
+
+        return base;
+    }
+
+    private Node getSejongView() {
+        Node base = new Node();
+        base.setRenderable(sejongLayoutRenderable);
+        Context c = this;
+        // Add  listeners etc here
+        View eView = sejongLayoutRenderable.getView();
+        eView.setOnTouchListener((v, event) -> {
+            Toast.makeText(
+                    c, "Sejong touched.", Toast.LENGTH_LONG)
+                    .show();
+            return false;
+        });
+
+        return base;
+    }
+
+    private Node getJejuView() {
+        Node base = new Node();
+        base.setRenderable(jejuLayoutRenderable);
+        Context c = this;
+        // Add  listeners etc here
+        View eView = jejuLayoutRenderable.getView();
+        eView.setOnTouchListener((v, event) -> {
+            Toast.makeText(
+                    c, "Jeju touched.", Toast.LENGTH_LONG)
+                    .show();
+            return false;
+        });
+
+        return base;
+    }
+
+DustRunnable 안에
+
+incheonDustData = fineDustParser.incheonDust;
+gwangjuDustData = fineDustParser.gwangjuDust;
+daejeonDustData = fineDustParser.daejeonDust;
+jejuDustData = fineDustParser.jejuDust;
+sejongDustData = fineDustParser.sejongDust;
+
+incheonDustInt = Integer.parseInt(incheonDustData);
+gwangjuDustInt = Integer.parseInt(gwangjuDustData);
+daejeonDustInt = Integer.parseInt(daejeonDustData);
+jejuDustInt = Integer.parseInt(jejuDustData);
+sejongDustInt = Integer.parseInt(sejongDustData);
+
+isMarkerCreated :
+incheonDistance.setText(incheonDistanceInt + "Km");
+gwangjuDistance.setText(gwangjuDistanceInt + "Km");
+daejeonDistance.setText(daeguDistanceInt + "Km");
+jejuDistance.setText(jejuDistanceInt + "Km");
+sejongDistance.setText(sejongDistanceInt + "Km");
+incheonPM10.setText(incheonDustData + "㎍/m³");
+gwangjuPM10.setText(gwangjuDustData + "㎍/m³");
+daejeonPM10.setText(daeguDustData + "㎍/m³");
+jejuPM10.setText(jejuDustData + "㎍/m³");
+sejongPM10.setText(sejongDustData + "㎍/m³");
+
+                            if (incheonDustInt <= 30) { // Blue, 좋음
+                                incheonView.setBackgroundColor(Color.rgb(87, 160, 248));
+                            } else if (incheonDustInt > 30 && incheonDustInt <= 80) { // Green, 보통
+                                incheonView.setBackgroundColor(Color.rgb(92, 195, 81));
+                            } else if (incheonDustInt > 80 && incheonDustInt <= 150) { // Orange, 나쁨
+                                incheonView.setBackgroundColor(Color.rgb(238, 159, 102));
+                            } else if (incheonDustInt > 150) { // Red, 매우나쁨
+                                incheonView.setBackgroundColor(Color.rgb(235, 101, 95));
+                            }
+
+                            if (gwangjuDustInt <= 30) { // Blue, 좋음
+                                gwangjuView.setBackgroundColor(Color.rgb(87, 160, 248));
+                            } else if (gwangjuDustInt > 30 && gwangjuDustInt <= 80) { // Green, 보통
+                                gwangjuView.setBackgroundColor(Color.rgb(92, 195, 81));
+                            } else if (gwangjuDustInt > 80 && gwangjuDustInt <= 150) { // Orange, 나쁨
+                                gwangjuView.setBackgroundColor(Color.rgb(238, 159, 102));
+                            } else if (gwangjuDustInt > 150) { // Red, 매우나쁨
+                                gwangjuView.setBackgroundColor(Color.rgb(235, 101, 95));
+                            }
+
+                            if (daejeonDustInt <= 30) { // Blue, 좋음
+                                daejeonView.setBackgroundColor(Color.rgb(87, 160, 248));
+                            } else if (daejeonDustInt > 30 && daejeonDustInt <= 80) { // Green, 보통
+                                daejeonView.setBackgroundColor(Color.rgb(92, 195, 81));
+                            } else if (daejeonDustInt > 80 && daejeonDustInt <= 150) { // Orange, 나쁨
+                                daejeonView.setBackgroundColor(Color.rgb(238, 159, 102));
+                            } else if (daejeonDustInt > 150) { // Red, 매우나쁨
+                                daejeonView.setBackgroundColor(Color.rgb(235, 101, 95));
+                            }
+
+                            if (jejuDustInt <= 30) { // Blue, 좋음
+                                jejuView.setBackgroundColor(Color.rgb(87, 160, 248));
+                            } else if (jejuDustInt > 30 && jejuDustInt <= 80) { // Green, 보통
+                                jejuView.setBackgroundColor(Color.rgb(92, 195, 81));
+                            } else if (jejuDustInt > 80 && jejuDustInt <= 150) { // Orange, 나쁨
+                                jejuView.setBackgroundColor(Color.rgb(238, 159, 102));
+                            } else if (jejuDustInt > 150) { // Red, 매우나쁨
+                                jejuView.setBackgroundColor(Color.rgb(235, 101, 95));
+                            }
+
+                            if (sejongDustInt <= 30) { // Blue, 좋음
+                                sejongView.setBackgroundColor(Color.rgb(87, 160, 248));
+                            } else if (sejongDustInt > 30 && sejongDustInt <= 80) { // Green, 보통
+                                sejongView.setBackgroundColor(Color.rgb(92, 195, 81));
+                            } else if (sejongDustInt > 80 && sejongDustInt <= 150) { // Orange, 나쁨
+                                sejongView.setBackgroundColor(Color.rgb(238, 159, 102));
+                            } else if (sejongDustInt > 150) { // Red, 매우나쁨
+                                sejongView.setBackgroundColor(Color.rgb(235, 101, 95));
+                            }

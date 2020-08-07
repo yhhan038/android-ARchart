@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">embeddedvis</string>
+
+    <string name="vertical">Vertical plane</string>
+    <string name="horizontal">Horizontal plane</string>
+
+    <string name="noPlane">Plane is not detected.</string>
+    <string name="gyro">Gyro Sensor</string>
+    <string name="GPS">GPS              -</string>
+    <string name="gyroinit">G(0, 0, 0)</string>
+    <string name="webPop">Popup mode : Web</string>
+    <string name="videoPop">Popup mode : Video</string>
+    <string name="video">Video Popup</string>
+    <string name="statusMode">Show/Hide Status</string>
+    <string name="finedustmode">Deactivate finedust</string>
+    <string name="sensorToggle">Sensor toggle</string>
+    <string name="clear">Clear all</string>
+    <string name="hidestat">Hide status</string>
+    <string name="showstat">Show status</string>
+    <string name="dash">-</string>
+
+    <string name="bar_title">Bar Chart</string>
+    <string name="line_title">Line Chart</string>
+    <string name="scatter_title">Scatter Chart</string>
+</resources>

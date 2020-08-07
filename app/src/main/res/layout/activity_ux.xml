@@ -1,0 +1,239 @@
+<!--
+   Copyright 2018 Google LLC.
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+  <fragment
+      android:id="@+id/ux_fragment"
+      android:name="com.example.embeddedvis_arcore.ARFragment"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent" />
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="horizontal"/>
+
+  <LinearLayout
+      android:id="@+id/statusLayout"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="start"
+      android:padding="6dp"
+      android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/statusTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|start"
+        android:layout_marginStart="20dp"
+        android:gravity="center"
+        android:text="Status Monitor"
+        android:textColor="#FEFEFE"
+        android:textSize="10sp"
+        tools:ignore="HardcodedText,SmallSp"/>
+
+    <TextView
+        android:id="@+id/planeType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|start"
+        android:layout_marginStart="5dp"
+        android:gravity="center"
+        android:text="@string/noPlane"
+        android:textColor="#FEFEFE"
+        android:textSize="10sp"
+        tools:ignore="SmallSp" />
+
+    <TextView
+        android:id="@+id/gyro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|start"
+        android:layout_marginStart="5dp"
+        android:ems="10"
+        android:gravity="start"
+        android:text="@string/gyroinit"
+        android:textColor="#FEFEFE"
+        android:textSize="10sp"
+        tools:ignore="SmallSp"/>
+
+    <TextView
+        android:id="@+id/serverRx"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|start"
+        android:layout_marginStart="5dp"
+        android:ems="10"
+        android:gravity="start"
+        android:text="Server Rx"
+        android:textColor="#FEFEFE"
+        android:textSize="10sp"
+        tools:ignore="HardcodedText,SmallSp" />
+
+    <TextView
+        android:id="@+id/processedData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|start"
+        android:layout_marginStart="5dp"
+        android:ems="10"
+        android:gravity="start"
+        android:text="Processed Data"
+        android:textColor="#FEFEFE"
+        android:textSize="10sp"
+        tools:ignore="HardcodedText,SmallSp" />
+
+    <ProgressBar
+        android:id="@+id/networkProgressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+  </LinearLayout>
+
+  <LinearLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="bottom|start"
+      android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginStart="10dp"
+        android:orientation="horizontal">
+
+      <com.google.android.material.floatingactionbutton.FloatingActionButton
+          android:id="@+id/statusButton"
+          android:layout_width="40dp"
+          android:layout_height="40dp"
+          android:layout_gravity="start|center"
+          android:layout_marginEnd="5dp"
+          android:backgroundTint="@color/design_default_color_primary"
+          android:clickable="true"
+          android:focusable="true"
+          android:src="@android:drawable/ic_menu_manage"
+          android:visibility="invisible"
+          app:borderWidth="0dp"
+          app:fabSize="mini"
+          app:maxImageSize="30dp" />
+
+      <TextView
+          android:id="@+id/statusText"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="start|center"
+          android:text="@string/statusMode"
+          android:textColor="#FEFEFE"
+          android:textSize="14sp"
+          android:visibility="invisible" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginStart="10dp"
+        android:orientation="horizontal">
+
+      <com.google.android.material.floatingactionbutton.FloatingActionButton
+          android:id="@+id/sensorButton"
+          android:layout_width="40dp"
+          android:layout_height="40dp"
+          android:layout_gravity="start|center"
+          android:layout_marginEnd="5dp"
+          android:backgroundTint="@color/design_default_color_primary"
+          android:clickable="true"
+          android:focusable="true"
+          android:src="@android:drawable/ic_menu_compass"
+          android:visibility="invisible"
+          app:borderWidth="0dp"
+          app:fabSize="mini"
+          app:maxImageSize="30dp" />
+
+      <TextView
+          android:id="@+id/sensorText"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="start|center"
+          android:text="@string/sensorToggle"
+          android:textColor="#FEFEFE"
+          android:textSize="14sp"
+          android:visibility="invisible" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginStart="10dp"
+        android:orientation="horizontal">
+
+      <com.google.android.material.floatingactionbutton.FloatingActionButton
+          android:id="@+id/clearButton"
+          android:layout_width="40dp"
+          android:layout_height="40dp"
+          android:layout_gravity="start|center"
+          android:layout_marginEnd="5dp"
+          android:backgroundTint="@color/design_default_color_primary"
+          android:clickable="true"
+          android:focusable="true"
+          android:src="@android:drawable/ic_menu_delete"
+          android:visibility="invisible"
+          app:borderWidth="0dp"
+          app:fabSize="mini"
+          app:maxImageSize="30dp" />
+
+      <TextView
+          android:id="@+id/clearAllText"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="start|center"
+          android:text="@string/clear"
+          android:textColor="#FEFEFE"
+          android:textSize="14sp"
+          android:visibility="invisible" />
+
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/settingButton"
+        android:layout_width="40dp"
+        android:layout_height="0dp"
+        android:layout_gravity="start"
+        android:layout_margin="9dp"
+        android:layout_weight="1"
+        android:backgroundTint="@color/colorAccent"
+        android:clickable="true"
+        android:elevation="1dp"
+        android:focusable="true"
+        app:borderWidth="0dp"
+        app:fabSize="mini"
+        app:maxImageSize="30dp"
+        app:srcCompat="@android:drawable/ic_menu_more" />
+
+  </LinearLayout>
+
+</FrameLayout>
